@@ -67,7 +67,7 @@ else if (inputLocation == mountains)
 
 else if (inputLocation == town)
 {
-    Console.WriteLine($"You decided to {town} for whatever you might need off the top of your head. While you're there, what would you like to do? \nVisit a cafe? \n Go to a movie? \nGo shopping?");
+    Console.WriteLine($"You decided to {town} for whatever you might need off the top of your head. While you're there, what would you like to do? \nVisit a cafe? \nGo to a movie? \nGo shopping?");
     string inputTown = Console.ReadLine();
 
     string cafe = "cafe";
@@ -82,7 +82,18 @@ else if (inputLocation == town)
     // now I gotta figure out how
     else if (inputTown == movie)
     {
-        Console.WriteLine($"You go to buy a ticket to the afternoon show of a new blockbuster {movie}, grab some snacks and enjoy!");
+        Console.WriteLine($"You go to buy a ticket to the afternoon show of a new blockbuster {movie}, but its R18, enter your age.");
+        int userAge = int.Parse(Console.ReadLine());
+
+        if (userAge >= 18)
+        {
+            Console.WriteLine($"Congratulations, you're good to go!");
+        }
+
+        else if (userAge < 18)
+        {  
+            Console.WriteLine($"Sorry, you're gonna have to find another movie to watch. :("); 
+        }
     }
 
     else if (inputTown == shopping)
